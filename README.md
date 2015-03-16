@@ -9,7 +9,7 @@ FPDF and FPDI Bundle for Symfony2
 
 ### Step 1: Download the bundle using Composer
 
-    $ composer require "royopa/pdf-bundle": "dev-master"
+    $ composer require "royopa/pdf-bundle": "dev-master as 1.0"
 
 Or
 
@@ -17,7 +17,7 @@ Add RoyopaPdfBundle to composer.json.
 
     {
         "require": {
-            "royopa/pdf-bundle": "dev-master"
+            "royopa/pdf-bundle": "dev-master as 1.0"
         }
     }
 
