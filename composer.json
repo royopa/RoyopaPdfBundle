@@ -1,14 +1,18 @@
 {
-    "name": "kitpages/pdf-bundle",
+    "name": "royopa/pdf-bundle",
     "type": "symfony-bundle",
     "description": "Symfony PdfBundle",
     "keywords": ["PDF", "FPDF", "FPDI"],
-    "homepage": "https://github.com/kitpages/KitpagesPDFBundle",
+    "homepage": "https://github.com/royopa/RoyopaPdfBundle",
     "license": "BSD",
     "authors": [
         {
             "name": "Sébastien Lefebvre",
             "email": "sebastien.lefebvre@kitpages.fr"
+        },
+        {
+            "name": "Rodrigo Prado de Jesus",
+            "email": "royopa@gmail.com"
         }
     ],
     "require": {
@@ -16,7 +20,7 @@
         "symfony/framework-bundle": "*"
     },
     "autoload": {
-        "psr-0": { "Kitpages\\PDFBundle": "" }
+        "psr-0": { "Royopa\\PdfBundle": "" }
     },
-    "target-dir": "Kitpages/PDFBundle"
+    "target-dir": "Royopa\\PdfBundle"
 }

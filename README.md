@@ -1,33 +1,68 @@
-KitpagesPDFBundle
-=================
+RoyopaPDFBundle
+===============
 
-Pdf: FPDF and FPDI simple wrapper for Symfony
+FPDF and FPDI Bundle for Symfony2
 
+[![Build Status](https://travis-ci.org/siphoc/PdfBundle.png?branch=master)](https://travis-ci.org/siphoc/PdfBundle)
 
-Installation
-============
-use composer update
+## Installation
 
-add the new Bundle in app/appKernel.php
+### Step 1: Download the bundle using Composer
 
-Use example
-============
+Add RoyopaPDFBundle to composer.json.
 
-use Kitpages\PDFBundle\lib\PDF;
+    {
+        "require": {
+            "royopa/pdf-bundle": "dev-master"
+        }
+    }
 
+Or
 
-$pdf = new PDF();
-$pagecount = $pdf->setSourceFile('oldPdf.pdf);
+    $ composer require "royopa/pdf-bundle": "dev-master"
 
-for($i = 1; $i <= $pagecount; $i++){
-    $tplIdx = $pdf->importPage($i);
-    $s = $pdf->getTemplatesize($tplIdx);
-    $pdf->AddPage($s['h'] > $s['w'] ? 'P' : 'L', array($s['w'], $s['h']), true); // This gets it the right dimensions
-    $pdf->useTemplate($tplIdx, 0, 0, 0, 0, true);
-    $pdf->SetFont('Arial','',8);
-    $pdf->SetTextColor(168,168,168);
-    $pdf->SetY(20);
-    $pdf->SetX(80);
-    $pdf->Write(0, 'modify my pdf');
-}
-$pdf->Output('newPdf.pdf, 'D');
+Install the bundle:
+
+    $ composer.phar update royopa/pdf-bundle
+
+Composer will install the bundle with the required dependencies.
+
+### Step 2: Enable the bundle
+
+In your AppKernel add the following:
+
+```php
+    // app/AppKernel.php
+
+    public function registerBundles()
+    {
+        $bundles = array(
+            // ...
+            new Royopa\PdfBundle\RoyopaPdfBundle(),
+        );
+    }
+```
+
+## Usage
+
+```php
+    use Royopa\PdfBundle\lib\PDF;
+
+    $pdf = new PDF();
+
+    $pagecount = $pdf->setSourceFile('oldPdf.pdf);
+
+    for($i = 1; $i <= $pagecount; $i++){
+        $tplIdx = $pdf->importPage($i);
+        $s = $pdf->getTemplatesize($tplIdx);
+        $pdf->AddPage($s['h'] > $s['w'] ? 'P' : 'L', array($s['w'], $s['h']), true); // This gets it the right dimensions
+        $pdf->useTemplate($tplIdx, 0, 0, 0, 0, true);
+        $pdf->SetFont('Arial','',8);
+        $pdf->SetTextColor(168,168,168);
+        $pdf->SetY(20);
+        $pdf->SetX(80);
+        $pdf->Write(0, 'modify my pdf');
+    }
+
+    $pdf->Output('newPdf.pdf, 'D');
+```
