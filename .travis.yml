@@ -21,7 +21,3 @@ before_script:
     - composer require --no-update symfony/symfony=${SYMFONY_VERSION}
     - composer require --no-update royopa/pdf-bundle=${ROYOPAPDFBUNDLE_VERSION}
     - composer install --prefer-source
-
-notifications:
-  email:
-    - royopa@gmail.com
