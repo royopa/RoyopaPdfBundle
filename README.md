@@ -3,27 +3,29 @@ RoyopaPDFBundle
 
 FPDF and FPDI Bundle for Symfony2
 
-[![Build Status](https://travis-ci.org/siphoc/PdfBundle.png?branch=master)](https://travis-ci.org/siphoc/PdfBundle)
+[![Build Status](https://travis-ci.org/royopa/RoyopaPdfBundle.png?branch=master)](https://travis-ci.org/royopa/RoyopaPdfBundle)
 
 ## Installation
 
 ### Step 1: Download the bundle using Composer
 
-Add RoyopaPDFBundle to composer.json.
+Add RoyopaPdfBundle to composer.json.
 
+```json
     {
         "require": {
             "royopa/pdf-bundle": "dev-master"
         }
     }
+```
 
 Or
 
-    $ composer require "royopa/pdf-bundle": "dev-master"
+        $ composer require "royopa/pdf-bundle": "dev-master"
 
 Install the bundle:
 
-    $ composer.phar update royopa/pdf-bundle
+        $ composer.phar update royopa/pdf-bundle
 
 Composer will install the bundle with the required dependencies.
 
@@ -52,15 +54,22 @@ In your AppKernel add the following:
 
     $pagecount = $pdf->setSourceFile('oldPdf.pdf);
 
-    for($i = 1; $i <= $pagecount; $i++){
+    for($i = 1; $i <= $pagecount; $i++) {
+        
         $tplIdx = $pdf->importPage($i);
+        
         $s = $pdf->getTemplatesize($tplIdx);
-        $pdf->AddPage($s['h'] > $s['w'] ? 'P' : 'L', array($s['w'], $s['h']), true); // This gets it the right dimensions
+        
+        // This gets it the right dimensions
+        $pdf->AddPage($s['h'] > $s['w'] ? 'P' : 'L', array($s['w'], $s['h']), true); 
         $pdf->useTemplate($tplIdx, 0, 0, 0, 0, true);
+        
         $pdf->SetFont('Arial','',8);
         $pdf->SetTextColor(168,168,168);
+        
         $pdf->SetY(20);
         $pdf->SetX(80);
+        
         $pdf->Write(0, 'modify my pdf');
     }
 
