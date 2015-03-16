@@ -8,14 +8,14 @@ php:
   - 5.6
   - hhvm
 
+env:
+  - SYMFONY_VERSION='2.5.*'
+
+before_script:
+  - composer require --no-interaction --no-update symfony/symfony=${SYMFONY_VERSION}
+  - composer require --no-interaction --no-update royopa/pdf-bundle=dev-master
+  - composer install --prefer-source
+
 matrix:
   allow_failures:
      - php: hhvm
-
-env:
-  - SYMFONY_VERSION='2.5.*' ROYOPAPDFBUNDLE_VERSION='dev-master as 1.0'
-
-before_script:
-  - composer require --no-update symfony/symfony=${SYMFONY_VERSION}
-  - composer require --no-update royopa/pdf-bundle=dev-master
-  - composer install --prefer-source
