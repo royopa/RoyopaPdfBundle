@@ -9,15 +9,13 @@ php:
   - hhvm
 
 matrix:
-    allow_failures:
-        - php: hhvm
+  allow_failures:
+     - php: hhvm
 
 env:
   - SYMFONY_VERSION='2.5.*' ROYOPAPDFBUNDLE_VERSION='dev-master as 1.0'
 
 before_script:
-
-"royopa/pdf-bundle": "dev-master as 1.0"
-    - composer require --no-update symfony/symfony=${SYMFONY_VERSION}
-    - composer require --no-update royopa/pdf-bundle=${ROYOPAPDFBUNDLE_VERSION}
-    - composer install --prefer-source
+  - composer require --no-update symfony/symfony=${SYMFONY_VERSION}
+  - composer require --no-update royopa/pdf-bundle=${ROYOPAPDFBUNDLE_VERSION}
+  - composer install --prefer-source
