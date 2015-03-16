@@ -22,5 +22,6 @@
     "autoload": {
         "psr-0": { "Royopa\\PdfBundle": "" }
     },
+    "minimum-stability": "dev",
     "target-dir": "Royopa\\PdfBundle"
 }
