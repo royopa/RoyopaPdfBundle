@@ -55,30 +55,34 @@ Step 3: Use the Bundle
 ----------------------
 
 ```php
-    use Royopa\PdfBundle\lib\PDF;
+<?php
+// app/AppKernel.php
 
-    $pdf = new PDF();
+use Royopa\PdfBundle\lib\PDF;
 
-    $pagecount = $pdf->setSourceFile('oldPdf.pdf);
+// ...
+$pdf = new PDF();
 
-    for($i = 1; $i <= $pagecount; $i++) {
-        
-        $tplIdx = $pdf->importPage($i);
-        
-        $s = $pdf->getTemplatesize($tplIdx);
-        
-        // This gets it the right dimensions
-        $pdf->AddPage($s['h'] > $s['w'] ? 'P' : 'L', array($s['w'], $s['h']), true); 
-        $pdf->useTemplate($tplIdx, 0, 0, 0, 0, true);
-        
-        $pdf->SetFont('Arial','',8);
-        $pdf->SetTextColor(168,168,168);
-        
-        $pdf->SetY(20);
-        $pdf->SetX(80);
-        
-        $pdf->Write(0, 'modify my pdf');
-    }
+$pagecount = $pdf->setSourceFile('oldPdf.pdf);
 
-    $pdf->Output('newPdf.pdf, 'D');
+for($i = 1; $i <= $pagecount; $i++) {
+        
+    $tplIdx = $pdf->importPage($i);
+        
+    $s = $pdf->getTemplatesize($tplIdx);
+        
+    // This gets it the right dimensions
+    $pdf->AddPage($s['h'] > $s['w'] ? 'P' : 'L', array($s['w'], $s['h']), true); 
+    $pdf->useTemplate($tplIdx, 0, 0, 0, 0, true);
+        
+    $pdf->SetFont('Arial','',8);
+    $pdf->SetTextColor(168,168,168);
+        
+    $pdf->SetY(20);
+    $pdf->SetX(80);
+        
+    $pdf->Write(0, 'modify my pdf');
+}
+
+$pdf->Output('newPdf.pdf, 'D');
 ```
