@@ -56,8 +56,6 @@ Step 3: Use the Bundle
 
 ```php
 <?php
-// app/AppKernel.php
-
 use Royopa\PdfBundle\lib\PDF;
 
 // ...
