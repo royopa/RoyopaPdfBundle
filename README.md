@@ -4,6 +4,7 @@ RoyopaPDFBundle
 FPDF and FPDI Bundle for Symfony2
 
 [![Build Status](https://travis-ci.org/royopa/RoyopaPdfBundle.png?branch=master)](https://travis-ci.org/royopa/RoyopaPdfBundle)
+[![Latest Stable Version](https://poser.pugx.org/royopa/pdf-bundle/v/stable.svg)](https://packagist.org/packages/royopa/pdf-bundle) [![Total Downloads](https://poser.pugx.org/royopa/pdf-bundle/downloads.svg)](https://packagist.org/packages/royopa/pdf-bundle) [![Latest Unstable Version](https://poser.pugx.org/royopa/pdf-bundle/v/unstable.svg)](https://packagist.org/packages/royopa/pdf-bundle) [![License](https://poser.pugx.org/royopa/pdf-bundle/license.svg)](https://packagist.org/packages/royopa/pdf-bundle)
 
 ## Installation
 
