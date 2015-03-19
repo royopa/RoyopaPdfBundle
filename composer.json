@@ -27,5 +27,6 @@
             "Royopa\\PdfBundle\\": "src"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "target-dir": "Royopa/PdfBundle"
 }
