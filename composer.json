@@ -25,5 +25,5 @@
     "autoload": {
         "psr-4": { "Royopa\\PdfBundle\\": "src" }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "dev"
 }
