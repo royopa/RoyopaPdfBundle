@@ -23,7 +23,7 @@
         "symfony-cmf/testing": "1.2.*"
     },
     "autoload": {
-        "psr-0": { "Royopa\\PdfBundle": "" }
+        "psr-0": { "Royopa\\PdfBundle": "src" }
     },
     "minimum-stability": "dev",
     "target-dir": "Royopa\\PdfBundle"
